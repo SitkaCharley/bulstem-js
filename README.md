@@ -25,7 +25,7 @@ See `index.html` in root folder
 - ### React/Vue:
 
 ```
-import { createStemmer } from 'BulStemJS';
+import { createStemmer } from 'bulstem-js';
 ...
 createStemmer().then(stemmer => {
   const stem = stemmer.stem('сладкият');
