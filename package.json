@@ -9,7 +9,7 @@
     "test": "jest"
   },
   "author": "Petar Todorov",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.20.7",
@@ -25,5 +25,20 @@
     "jest": "^29.3.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SitkaCharley/bulstem-js.git"
+  },
+  "keywords": [
+    "bulgarian",
+    "stemmer"
+  ],
+  "bugs": {
+    "url": "https://github.com/SitkaCharley/bulstem-js/issues"
+  },
+  "homepage": "https://github.com/SitkaCharley/bulstem-js#readme"
 }
