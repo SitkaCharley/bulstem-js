@@ -41,7 +41,7 @@ createStemmer().then(stemmer => {
 | ------ | ------ | ------ | ------ |
 | **contextType** | string | 's' | The size of the context volume used for stemming calculation. Possible values: 's' for small, 'm' for medium, 'l' for large. The larger the volume, the more effective the stemmer, but requires more RAM and Internet traffic. It may take up to about 2MB for a single stemmer. |
 | **options** | object | { stemBoundary: 1,  } | Initial options. |
-| **options.stemBoundary** | object | 1  |  A number > 0, the higher the number, the less effective the stemmer.|
+| **options.stemBoundary** | number | 1  |  A number > 0, the higher the number, the less effective the stemmer.|
 
 ## License
 
