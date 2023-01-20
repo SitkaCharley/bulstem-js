@@ -1,0 +1,29 @@
+{
+  "name": "BulStemJS",
+  "version": "1.0.0",
+  "description": "An inflectional stemmer for Bulgarian language based on close to Stemka algorithm. The problem is addressed from a machinelearning perspective using a large morphological dictionary. Originally it was developed by Preslav Nakov. This javascript library is a direct translation from Georgi Kostadinov's Python library that implements the BulStem algorithm - https://github.com/gkostadinov/py-bulgarian-stemmer. You can find more on Nakov's BulStem algorithm here - http://lml.bas.bg/~nakov/bulstem/",
+  "main": "index.js",
+  "scripts": {
+    "build:webpack": "webpack",
+    "build:babel": "babel index.js -d lib",
+    "test": "jest"
+  },
+  "author": "Petar Todorov",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/plugin-transform-modules-umd": "^7.18.6",
+    "@babel/preset-env": "^7.20.2",
+    "babel-jest": "^29.3.1",
+    "eslint": "^8.31.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "jest": "^29.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
