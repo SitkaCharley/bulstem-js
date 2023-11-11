@@ -1,8 +1,14 @@
-import { createStemmer } from '../index'
+import createStemmer from '../src/index'
 
 describe('BulgarianStemmer library', () => {
-    it('processes bulgarian words into stems', async () => {
-      const stemmer = await createStemmer('s', {stemBoundary: 1});
+
+   it('creates default stemmer', () => {
+      const stemmer = createStemmer();
+      expect(stemmer.stemBoundary).toBe(1);
+   });
+
+   it('processes bulgarian words into stems', () => {
+      const stemmer = createStemmer({stemBoundary: 1});
 
       expect(stemmer.stem('обикновен')).not.toBeUndefined();
       expect(stemmer.stem('обикновен')).toEqual('обикнов');

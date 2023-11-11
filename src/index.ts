@@ -20,21 +20,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import BulgarianStemmer from './stemmer.js';
+import BulgarianStemmer, { Options, Rule } from './stemmer';
+import * as data from './data/stem_rules_context_1';
 
-const loadContext = async type => {
-  if(type === 'l'){
-    return import('./data/stem_rules_context_3.js');
-  }else if(type === 'm'){
-    return import('./data/stem_rules_context_2.js');
-  }else if(type === 's'){
-    return import('./data/stem_rules_context_1.js');
-  }else{
-    throw 'Unknown context!'
-  }
-}
-
-export const createStemmer = async (type = 's', options = { stemBoundary: 1 }) => {
-  const context = await loadContext(type);
-  return new BulgarianStemmer(context.default, options);
+export default function createStemmer(options: Options = { stemBoundary: 1 }): BulgarianStemmer {
+  const rulesTypless = (data.default as unknown);
+  return new BulgarianStemmer(rulesTypless as Rule[], options);
 }

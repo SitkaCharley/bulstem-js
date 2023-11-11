@@ -1,11 +1,29 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  entry: './index.js',
+  mode: "production",
+  entry: "./src/index.ts",
+  module: {
+    rules: [
+      {
+        test: /\.ts/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
+    ],
+  },
+  resolve: {
+    extensions: [".ts"],
+  },
   output: {
-    path: path.resolve(__dirname, 'lib'),
-    filename: 'bundle.js',
-    library: 'BulStem',
-    libraryTarget: 'var',
+    clean: true,
+    path: path.resolve(__dirname, "dist"),
+    filename: "index.js",
+    globalObject: "this",
+    library: {
+      name: "BulStem",
+      type: "umd",
+      export: "default",
+    },
   },
 };

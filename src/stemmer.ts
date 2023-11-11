@@ -20,16 +20,24 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-class BulgarianStemmer {
+type Options = {
+  stemBoundary: number;
+}
 
-    constructor(context, options = {}){
-      const { stemBoundary = 1 } = options;
+type Rule = readonly [string, string, number];
+
+class BulgarianStemmer {
+    stemBoundary: number;
+    stemmingRules: Map<string, string>;
+    constructor(context: Rule[], options: Options = { stemBoundary: 1 }){
+      const { stemBoundary } = options;
       this.stemBoundary = stemBoundary;
+      this.stemmingRules = new Map<string, string>();
       this.parsingFileContent(context);
     }
 
-    parsingFileContent(context){
-      this.stemmingRules = new Map();
+    parsingFileContent(context: Rule[]){
+      this.stemmingRules = new Map<string, string>();
 
       for(let index in context) {
         const rule = context[index];
@@ -39,7 +47,7 @@ class BulgarianStemmer {
       }
     }
 
-    stem(word){
+    stem(word: string){
       const valid_word = /[^аъоуeиюя]*[аъоуeиюя]/.exec(word);
       const word_length = word.length;
 
@@ -58,3 +66,4 @@ class BulgarianStemmer {
 }
 
 export default BulgarianStemmer;
+export { Options, Rule };

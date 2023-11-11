@@ -1,0 +1,16 @@
+<html>
+    <body>
+      <div>word: <span id='word'></span></div>
+      <div>stem: <span id='stem'></span></div>
+    </body>
+    <script src="./dist/index.js"></script>
+    <script>
+        const word = 'обикновен'
+        const stemmer = BulStem();
+        const stem = stemmer.stem(word);
+        document.querySelector('#word').textContent = word;
+        document.querySelector('#stem').textContent = stem;
+    </script>
+    <body>
+    </body>
+</html>
